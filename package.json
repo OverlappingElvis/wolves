@@ -1,0 +1,20 @@
+{
+  "name": "wolves",
+  "version": "0.0.1",
+  "description": "#jsforteams #awooooooo",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jeremy Sher",
+  "license": "ISC",
+  "dependencies": {
+    "hapi": "~6.2.1",
+    "moonboots_hapi": "~2.4.0",
+    "ampersand-view": "~6.0.8",
+    "ampersand-router": "~1.0.2",
+    "ampersand-model": "~3.0.4",
+    "getconfig": "~0.3.0",
+    "domready": "~1.0.5"
+  }
+}
