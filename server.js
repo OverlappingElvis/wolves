@@ -2,6 +2,7 @@ var hapi = require('hapi');
 var moonboots = require('moonboots_hapi');
 var server = hapi.createServer(8080, 'localhost');
 var config = require('getconfig');
+var templatizer = require('templatizer');
 
 server.pack.register({
 	plugin: moonboots,
@@ -13,7 +14,12 @@ server.pack.register({
 			scripts: [],
 			stylesheets: [
 				__dirname + '/public/css/bootstrap.css'
-			]
+			],
+			beforeBuildJS: function() {
+				if (config.isDev) {
+					templatizer(__dirname + '/templates', __dirname + '/client/templates.js')
+				}
+			}
 		}
 	}
 }, function() {
