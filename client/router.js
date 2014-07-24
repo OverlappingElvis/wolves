@@ -25,7 +25,7 @@ module.exports = Router.extend({
 		window.location = 'http://wolves.technology/authorize?redirect_uri=' + encodeURIComponent(window.location.origin + '/auth/callback');
 	},
 	authCallback: function() {
-		app.me.access_token = querystring.parse(window.location.hash.substr(1)).access_token;
+		app.me.accessToken = querystring.parse(window.location.hash.substr(1)).access_token;
 		this.redirectTo('/howls');
 	}
 });
