@@ -18,4 +18,4 @@ window.app = {
 	}
 };
 
-window.app.init();
+app.init();

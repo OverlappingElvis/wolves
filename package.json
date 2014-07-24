@@ -8,6 +8,7 @@
   },
   "author": "Jeremy Sher",
   "license": "ISC",
+  "repository": "https://github.com/OverlappingElvis/wolves",
   "dependencies": {
     "hapi": "~6.2.1",
     "moonboots_hapi": "~2.4.0",
@@ -17,6 +18,7 @@
     "getconfig": "~0.3.0",
     "domready": "~1.0.5",
     "ampersand-view-switcher": "~1.0.2",
-    "templatizer": "~0.3.6"
+    "templatizer": "~0.3.6",
+    "ampersand-dom": "~1.2.1"
   }
 }
