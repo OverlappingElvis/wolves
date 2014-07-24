@@ -3,7 +3,6 @@ var HomePage = require('./pages/home');
 var HowlsPage = require('./pages/howls');
 var WolvesPage = require('./pages/wolves');
 var querystring = require('querystring');
-var Me = require('./models/me');
 
 module.exports = Router.extend({
 	routes: {
@@ -26,7 +25,7 @@ module.exports = Router.extend({
 		window.location = 'http://wolves.technology/authorize?redirect_uri=' + encodeURIComponent(window.location.origin + '/auth/callback');
 	},
 	authCallback: function() {
-		var params = querystring.parse(window.location.hash.substr(1));
-		var authToken = params.access_token;
+		app.me.access_token = querystring.parse(window.location.hash.substr(1)).access_token;
+		this.redirectTo('/howls');
 	}
 });
