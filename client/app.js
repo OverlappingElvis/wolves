@@ -1,10 +1,22 @@
 var domready = require('domready');
 var MainView = require('./views/main');
 var Router = require('./router');
+var Howls = require('./models/howls');
+var Wolves = require('./models/wolves');
 
 window.app = {
 	init: function() {
 		var self = this;
+		self.howls = new Howls();
+		self.howls.fetch();
+		setInterval(function() {
+			self.howls.fetch();
+		}, 5000);
+		self.wolves = new Wolves();
+		self.wolves.fetch();
+		setInterval(function() {
+			self.wolves.fetch();
+		}, 5000);
 		self.router = new Router();
 		domready(function() {
 			self.view = new MainView({
